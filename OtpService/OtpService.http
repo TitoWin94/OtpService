@@ -1,0 +1,13 @@
+@host = http://localhost:5000
+
+POST {{host}}/otp/generate
+Content-Type: application/json
+
+{ "subject": "usuario@correo.com", "purpose": "login" }
+
+###
+
+POST {{host}}/otp/validate
+Content-Type: application/json
+
+{ "subject": "usuario@correo.com", "purpose": "login", "code": "123456" }
